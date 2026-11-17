@@ -44,7 +44,7 @@
   //-----------------------------------------------------------------------------------------------------------------------------
   //
   var config = {
-    apiKey: "AIzaSyCl0vPiiyIf8kF4A6muwK__AwXRkLupi-U",
+    apiKey: (window.APP_CONFIG || {}).FIREBASE_API_KEY || "",
     authDomain: "dinner-picker-4be13.firebaseapp.com",
     databaseURL: "https://dinner-picker-4be13.firebaseio.com",
     projectId: "dinner-picker-4be13",
@@ -98,7 +98,7 @@
     //for loop to call the Google API for each food genre selected by the user
     for (var i = 0; i < genres.length; i++) {
       var url = "https://maps.googleapis.com/maps/api/place/textsearch/json";
-      var api = "AIzaSyCrSZtxM-JFlEyqajAam7VuztNLoXi3DPc";
+      var api = (window.APP_CONFIG || {}).GOOGLE_PLACES_API_KEY || "";
       var q = genres[i];
       url += '?' + $.param({
         'key': api,
